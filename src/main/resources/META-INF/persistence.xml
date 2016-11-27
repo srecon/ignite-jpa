@@ -5,12 +5,9 @@
              version="2.0">
 
     <persistence-unit name="ogm-jpa-tutorial" transaction-type="RESOURCE_LOCAL">
-        <!-- Use the Hibernate OGM provider: configuration will be transparent -->
         <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
         <properties>
-            <!-- Here you will pick which NoSQL technology to use, and configure it;
-                 in this example we start a local in-memory Infinispan node. -->
-            <!--<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossStandAloneJtaPlatform"/>-->
+
             <property name="com.arjuna.ats.jta.jtaTMImplementation" value="com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionManagerImple"/>
             <property name="com.arjuna.ats.jta.jtaUTImplementation" value="com.arjuna.ats.internal.jta.transaction.arjunacore.UserTransactionImple"/>
 
